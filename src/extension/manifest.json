@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "Link Scoop",
+  "version": "2.0.0",
+  "description": "Extracts links from the active tab, preserves DOM order by default, and gives you clean plain-text output.",
+  "homepage_url": "https://github.com/karadigm01/link-scoop",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "menus",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "optional_host_permissions": [
+    "file:///*"
+  ],
+  "background": {
+    "scripts": [
+      "background/service-worker.js"
+    ],
+    "service_worker": "background/service-worker.js",
+    "preferred_environment": [
+      "document",
+      "service_worker"
+    ],
+    "type": "module"
+  },
+  "commands": {
+    "extract-links": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Extract links from the active tab"
+    }
+  },
+  "action": {
+    "default_area": "navbar",
+    "default_icon": {
+      "16": "assets/icons/icon-16-dark.svg",
+      "32": "assets/icons/icon-32-dark.svg",
+      "64": "assets/icons/icon-64.svg"
+    },
+    "theme_icons": [
+      {
+        "dark": "assets/icons/icon-16-dark.svg",
+        "light": "assets/icons/icon-16-light.svg",
+        "size": 16
+      },
+      {
+        "dark": "assets/icons/icon-32-dark.svg",
+        "light": "assets/icons/icon-32-light.svg",
+        "size": 32
+      }
+    ],
+    "default_title": "Link Scoop"
+  },
+  "icons": {
+    "16": "assets/icons/icon-16-dark.svg",
+    "32": "assets/icons/icon-32-dark.svg",
+    "64": "assets/icons/icon-64.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "link-scoop@karadigm01",
+      "strict_min_version": "121.0"
+    }
+  }
+}

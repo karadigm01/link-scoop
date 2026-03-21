@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Link Scoop</title>
+    <link rel="stylesheet" href="onboarding.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero card">
+        <p class="eyebrow">Welcome to Link Scoop</p>
+        <h1>Clean link extraction for the active tab</h1>
+        <p class="lede">Link Scoop extracts directly from the toolbar icon, preserves page order by default, and adds a right-click menu so extraction is easy to find.</p>
+      </section>
+
+      <section class="card steps" id="overview">
+        <h2>Quick start</h2>
+        <ol>
+          <li>Look for the bright Link Scoop icon in the Firefox toolbar. Firefox places it in the main toolbar by default.</li>
+          <li>If Firefox moved it into the Extensions button, open that menu and choose <strong>Pin to Toolbar</strong>.</li>
+          <li>Click the icon to extract links right away, then use the results page to adjust sort order and filters.</li>
+          <li>Right-click any webpage and choose <strong>Link Scoop → Extract Links</strong> for a faster workflow.</li>
+          <li>Use <strong>Ctrl+Shift+L</strong> on Windows/Linux or <strong>Command+Shift+L</strong> on macOS to extract links from the active tab without using the toolbar.</li>
+        </ol>
+      </section>
+
+      <section class="card" id="file-access">
+        <h2>Local file support</h2>
+        <p>To scan a local <code>file:///</code> HTML page, Link Scoop may need permission to read local files.</p>
+        <ol>
+          <li>Open <code>about:addons</code>.</li>
+          <li>Select <strong>Link Scoop</strong>.</li>
+          <li>Open the permissions section and enable local file access if Firefox asks for it.</li>
+          <li>Return to the file tab and run Link Scoop again.</li>
+        </ol>
+        <p class="noteText">Note: Saved HTML pages may not contain all links from the live site. If the original page used JavaScript to load content dynamically, those links won't exist in the saved file. Links that were relative on the live site (like <code>/news</code> or <code>/products</code>) will appear as <code>file:///</code> paths instead of full URLs. This is expected behavior, not a bug.</p>
+      </section>
+    </main>
+
+    <script type="module" src="onboarding.js"></script>
+  </body>
+</html>

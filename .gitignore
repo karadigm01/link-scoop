@@ -1,0 +1,15 @@
+node_modules/
+build/
+coverage/
+.vscode/
+.DS_Store
+*.log
+config/blueprints/
+ai_docs/
+knowledge_base/
+core_reference.json
+behavioral_directives.json
+.github/copilot-instructions.md
+.github/tool-sets.jsonc
+SYSTEM_STATUS.md
+SYSTEM_SUMMARY.md

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Scoop</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <div class="heroTopRow">
+            <p class="eyebrow">Link Scoop</p>
+            <button id="themeCycleButton" class="themeCycleButton" type="button">Theme: System</button>
+          </div>
+          <h1>Extract links from the active tab</h1>
+          <p class="lede">Use the popup to launch extraction fast. Fine-tune filters, sorting, and exports on the results page.</p>
+        </div>
+      </header>
+
+      <p id="themeToast" class="themeToast" role="status" aria-live="polite" hidden></p>
+
+      <section class="card compactCard">
+        <h2>Saved settings</h2>
+        <p id="settingsSummary" class="settingsSummary">Loading your saved sort and filter preferences…</p>
+        <p class="compactNote">Advanced filters, reset controls, refresh, and exports stay on the results page.</p>
+      </section>
+
+      <section class="actions">
+        <button id="extractButton" class="primary" type="button">Extract Links</button>
+        <button id="helpButton" type="button">Quick Start</button>
+      </section>
+
+      <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

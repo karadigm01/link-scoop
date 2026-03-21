@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Link Scoop Repository
+    url: https://github.com/karadigm01/link-scoop
+    about: Browse the project source and current docs.

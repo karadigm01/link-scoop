@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Scoop Results</title>
+    <link rel="stylesheet" href="results.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel hero">
+        <div>
+          <div class="heroTopRow">
+            <p class="eyebrow">Link Scoop</p>
+            <button id="quickStartButton" class="inlineButton" type="button">💡 Quick Start</button>
+            <button id="themeCycleButton" class="themeCycleButton" type="button" aria-live="polite">Theme: System</button>
+          </div>
+          <h1>Extracted links</h1>
+          <p id="summaryText" class="summary">Preparing results…</p>
+        </div>
+        <div class="buttonRow compact">
+          <button id="refreshButton" type="button">Refresh Scan</button>
+          <button id="copyButton" class="primary" type="button">Copy All</button>
+          <button id="downloadButton" type="button">Download as TXT</button>
+          <button id="downloadCsvButton" type="button">Download as CSV</button>
+        </div>
+      </section>
+
+      <section class="panel controls">
+        <div class="controlGroup">
+          <h2>Sort order</h2>
+          <label class="choice"><input type="radio" name="sortMode" value="original" /> <span>Original page order</span></label>
+          <label class="choice"><input type="radio" name="sortMode" value="alphabetical" /> <span>Alphabetical</span></label>
+        </div>
+
+        <div class="controlGroup grid">
+          <div class="sectionHeader">
+            <h2>Filters</h2>
+            <button id="resetFiltersButton" class="inlineButton" type="button">Reset Filters</button>
+          </div>
+          <label>
+            <span>Include URL</span>
+            <input id="urlIncludePattern" type="text" placeholder="github, docs" />
+          </label>
+          <label>
+            <span>Exclude URL</span>
+            <input id="urlExcludePattern" type="text" placeholder="login, signup, affiliate" />
+          </label>
+          <label>
+            <span>Include link text</span>
+            <input id="textIncludePattern" type="text" placeholder="Buy now, Details" />
+          </label>
+          <label>
+            <span>Exclude link text</span>
+            <input id="textExcludePattern" type="text" placeholder="Ad, Sponsored" />
+          </label>
+          <label class="choice"><input id="useRegex" type="checkbox" /> <span>Use regex patterns</span></label>
+          <label class="choice"><input id="decodeUrls" type="checkbox" /> <span>Decode output URLs</span></label>
+        </div>
+      </section>
+
+      <section class="panel outputPanel">
+        <p id="localFileBanner" class="infoNote" hidden>This page was loaded from a local file. Some links may appear as <code>file:///</code> paths — these were relative URLs on the original site that the browser resolved locally. They are correct for the saved page but won't match the live site's full URLs.</p>
+        <div class="outputHeader">
+          <h2>Plain-text output</h2>
+          <p id="messageText" class="status" role="status" aria-live="polite"></p>
+        </div>
+        <textarea id="outputArea" spellcheck="false" readonly></textarea>
+      </section>
+    </main>
+
+    <div id="themeToast" class="themeToast" role="status" aria-live="polite" hidden></div>
+
+    <script type="module" src="results.js"></script>
+  </body>
+</html>
