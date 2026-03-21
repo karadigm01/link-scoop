@@ -1,40 +1,43 @@
 # Link Scoop
 
-**Clean link extraction for Firefox.** Extract links from the active tab, then filter by URL or visible text and export as plain text or CSV from the results page.
+**Clean link extraction for Firefox.** Extract links from the active tab, filter by URL or visible text, and export them as plain text or CSV from the results page.
 
-[Open the GitHub Repository](https://github.com/karadigm01/link-scoop) · [Report a Bug](https://github.com/karadigm01/link-scoop/issues/new) · [Request a Feature](https://github.com/karadigm01/link-scoop/issues/new)
+[Firefox Add-ons listing pending review](https://addons.mozilla.org/en-US/firefox/addon/link-scoop/) · [Report a Bug](https://github.com/karadigm01/link-scoop/issues/new?template=bug_report.md) · [Request a Feature](https://github.com/karadigm01/link-scoop/issues/new?template=feature_request.md)
 
 ---
 
 ## Features
 
-- **One-click extraction** — click the toolbar icon and the results page opens immediately with extracted links from the active tab
-- **Preserves page order** by default — links are sorted in DOM order unless you switch to alphabetical sorting
-- **Include and exclude filters** — filter by URL or by visible link text, with optional regex support
-- **Multi-tag filters** — when regex is off, separate multiple terms with commas to match any of them
-- **Reset Filters** — clear all active filters in one click without affecting sort order or theme
-- **Anchor link extraction** — scans `<a href>` elements present in the page DOM at extraction time
-- **Broad protocol support** — captures `http`, `https`, `mailto`, `ftp`, `tel`, `magnet`, and other non-skipped protocols
-- **Redirect detection** — surfaces hidden destination URLs from common redirect and referrer-style links
-- **Clean output** — renders one URL per line in a plain-text textarea
-- **Copy All** — copies the current visible output to the clipboard with button feedback
+- **One-click extraction** — click the toolbar icon and the results page opens immediately with links from the active tab
+- **Preserves page order** by default — links stay in the order they appear in the page DOM unless you switch to alphabetical sorting
+- **Include and exclude filters** — filter by URL or visible link text, with optional regex support
+- **Multi-tag filters** — separate multiple terms with commas, such as `affiliate, advertisement, tracking`, to match any of them when regex is off
+- **Reset Filters** — clear active filters without affecting sort order or theme
+- **Broad protocol support** — captures `http`, `https`, `mailto`, `ftp`, `tel`, `magnet`, and other non-skipped link protocols
+- **Redirect detection** — surfaces hidden target URLs from redirect and referrer-style links
+- **Clean output** — one URL per line in a plain-text textarea
+- **Copy All** — copies the current visible output with inline button confirmation
 - **Download as TXT** — exports the current visible output as a text file
-- **Download as CSV** — exports URL, link text, redirect status, and redirect source columns
-- **Smart filenames** — download filenames include active filter values when present
+- **Download as CSV** — exports URL, link text, redirect status, and redirect source URL columns
+- **Smart filenames** — download filenames reflect active filter values when present
 - **Keyboard shortcut** — `Ctrl+Shift+L` on Windows/Linux and `Command+Shift+L` on macOS
 - **Context menu** — right-click any supported page and choose `Link Scoop → Extract Links`
-- **Theme toggle** — cycle between system, light, and dark themes from the results page header
-- **Empty-state hints** — when filters eliminate all results, Link Scoop explains that no links matched the active filters and names the active filter categories
-- **Local file support** — works on `file:///` pages after Firefox grants local file access
+- **Theme toggle** — switch between system, light, and dark themes from the results page header
+- **Empty-state hints** — when filters remove all results, Link Scoop explains that no links matched the active filters instead of showing a blank result
+- **Local file support** — works on `file:///` HTML pages after Firefox grants local file access
 - **Decode toggle** — optionally decode percent-encoded URLs in the displayed output and exports
 - **Refresh Scan** — re-extract from the original tab without leaving the results page
-- **Quick Start button** — reopen onboarding from the results page header
+- **Quick Start** — reopen onboarding from the results page header
 
 ## Installation
 
+### Firefox Add-ons
+
+Use the Firefox Add-ons listing once it is approved and live.
+
 ### Temporary local install
 
-1. Run the build:
+1. Build the extension:
 
 ```bash
 npm run build
@@ -44,28 +47,22 @@ npm run build
 3. Choose **Load Temporary Add-on**
 4. Select `build/link-scoop/manifest.json`
 
-### Firefox version
-
-Requires Firefox `121` or later.
-
-### Add-ons listing
-
-A public Firefox Add-ons listing should only be linked here once the AMO page is live.
+Requires Firefox `140` or later on desktop.
 
 ## How to Use
 
-1. Navigate to a supported web page.
+1. Navigate to any supported page.
 2. Click the **Link Scoop** toolbar icon.
 3. Review the extracted links on the results page.
 4. Filter, sort, copy, refresh, or export as needed.
 
-You can also use the keyboard shortcut or the page context menu. If Firefox places the icon in the Extensions menu instead of the toolbar, open that menu and choose **Pin to Toolbar**.
+You can also press **Ctrl+Shift+L** / **Command+Shift+L** or use the page context menu. If Firefox places the icon in the Extensions menu instead of the toolbar, open that menu and choose **Pin to Toolbar**.
 
 ## Privacy
 
-Link Scoop runs locally in Firefox. The extension code does not send extracted links to an external service. Extracted results and preferences are stored in the local browser profile for extension functionality.
+Link Scoop runs entirely in your browser. No data is transmitted or collected outside of your local Firefox profile.
 
-The extension currently requests permissions for active-tab extraction, context-menu access, scripting, storage, tabs, clipboard writing, and broad page access used by its extraction and refresh flows.
+The extension stores results and settings locally so it can reopen extracted results, remember preferences, and support refresh behavior. It requests `<all_urls>` host access to support Refresh Scan on previously scanned tabs.
 
 ## Development
 
@@ -88,7 +85,7 @@ npm install
 npm run build
 ```
 
-The build output is written to `build/link-scoop/`.
+The built extension is written to `build/link-scoop/`.
 
 ### Test
 
@@ -107,7 +104,7 @@ Current verified status:
 
 ## Scope
 
-Link Scoop extracts links from the **active tab only**. It reads `<a href>` elements present in the page DOM at scan time, including links added by JavaScript before extraction runs.
+Link Scoop extracts links from the **active tab only**. It reads `<a href>` elements present in the page DOM at scan time, including links injected by JavaScript before extraction runs.
 
 It does **not** extract:
 
@@ -118,18 +115,18 @@ It does **not** extract:
 
 ## FAQ
 
-**Q: Why can a saved local HTML file show fewer links than the live page?**
+**Why can Link Scoop show fewer links from a saved local HTML file than from the live page?**
 
-Saved HTML files may not contain links that were generated dynamically on the live site. Link Scoop extracts what actually exists in the DOM at scan time. Relative links from the original site can also resolve to `file:///` paths when the saved file is opened locally.
+Saved HTML files often do not include links that were dynamically generated on the live page. Link Scoop extracts what actually exists in the DOM at scan time. Relative links from the original site can also appear as `file:///` paths when the saved file is opened locally.
 
-**Q: Can I filter for multiple terms without regex?**
+**Can I filter for multiple terms at once without using regex?**
 
-Yes. With regex off, comma-separated terms in a filter field are treated as OR matches.
+Yes. When regex is off, comma-separated terms in any filter field are treated as OR matches.
 
-**Q: Can Link Scoop extract links from all open tabs at once?**
+**Can Link Scoop extract links from all open tabs at once?**
 
-No. It currently extracts from the active tab only.
+Not currently. Link Scoop extracts from the active tab only.
 
-**Q: Does Link Scoop send my data anywhere?**
+**Does Link Scoop send my data anywhere?**
 
-The extension code in this repository operates locally in the browser and does not transmit extracted links to an external service.
+No. The extension code operates locally in Firefox and does not transmit extracted links to an external service.
