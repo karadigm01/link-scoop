@@ -129,4 +129,4 @@ Not currently. Link Scoop extracts from the active tab only.
 
 **Does Link Scoop send my data anywhere?**
 
-No. The extension code operates locally in Firefox and does not transmit extracted links to an external service.
+No data is transmitted or collected outside your browser.
