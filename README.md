@@ -2,7 +2,7 @@
 
 **Clean link extraction for Firefox.** Extract links from the active tab, filter by URL or visible text, and export them as plain text or CSV from the results page.
 
-[Extension link](https://addons.mozilla.org/en-US/firefox/addon/link-scoop/) · [Report a Bug](https://github.com/karadigm01/link-scoop/issues/new?template=bug_report.md) · [Request a Feature](https://github.com/karadigm01/link-scoop/issues/new?template=feature_request.md)
+[Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/link-scoop/) · [Report a Bug](https://github.com/karadigm01/link-scoop/issues/new?template=bug_report.md) · [Request a Feature](https://github.com/karadigm01/link-scoop/issues/new?template=feature_request.md)
 
 ---
 
@@ -33,7 +33,9 @@
 
 ### Firefox Add-ons
 
-Use the Firefox Add-ons listing once it is approved and live.
+### Firefox Add-ons
+
+Install from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/link-scoop/).
 
 ### Temporary local install
 
