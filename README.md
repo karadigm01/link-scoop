@@ -33,8 +33,6 @@
 
 ### Firefox Add-ons
 
-### Firefox Add-ons
-
 Install from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/link-scoop/).
 
 ### Temporary local install
