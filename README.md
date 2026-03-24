@@ -1,6 +1,6 @@
 # Link Scoop
 
-**Clean link extraction for Firefox.** Extract links from the active tab, filter by URL or visible text, and export them as plain text or CSV from the results page.
+**Clean link extraction for Firefox.** Extract links from the active tab, filter by URL or link text, and export them as plain text or CSV from the results page.
 
 [Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/link-scoop/) · [Report a Bug](https://github.com/karadigm01/link-scoop/issues/new?template=bug_report.md) · [Request a Feature](https://github.com/karadigm01/link-scoop/issues/new?template=feature_request.md)
 
@@ -10,7 +10,7 @@
 
 - **One-click extraction** — click the toolbar icon and the results page opens immediately with links from the active tab
 - **Preserves page order** by default — links stay in the order they appear in the page DOM unless you switch to alphabetical sorting
-- **Include and exclude filters** — filter by URL or visible link text, with optional regex support
+- **Include and exclude filters** — filter by URL or link text, with optional regex support
 - **Multi-tag filters** — separate multiple terms with commas, such as `affiliate, advertisement, tracking`, to match any of them when regex is off
 - **Reset Filters** — clear active filters without affecting sort order or theme
 - **Broad protocol support** — captures `http`, `https`, `mailto`, `ftp`, `tel`, `magnet`, and other non-skipped link protocols
@@ -96,7 +96,7 @@ npx vitest run --coverage
 
 Current verified status:
 
-- `144/144` tests passing
+- `145/145` tests passing
 - `100%` statements
 - `100%` branches
 - `100%` functions
